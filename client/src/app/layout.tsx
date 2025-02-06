@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Link from "next/link";
+import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card";
+import {Input} from "@/components/ui/input";
+import {Button} from "@/components/ui/button";
+import {Checkbox} from "@/components/ui/checkbox";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,11 +29,26 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
+    <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
+    >
+    <div className="flex flex-col min-h-screen bg-gray-100 p-6">
+        <header className="flex justify-between">
+            <Link href="/">Home</Link>
+            <div className="flex gap-4">
+                <Link href="/login">
+                    Login
+                </Link>
+                <Link href="/registration">
+                    Reg
+                </Link>
+            </div>
+        </header>
+        <div className="flex items-center justify-center flex-1">
+            {children}
+        </div>
+    </div>
+    </body>
     </html>
   );
 }

@@ -29,8 +29,7 @@ export default function Page() {
     };
 
     return (
-        <div className="flex min-h-screen items-center justify-center bg-gray-100">
-            <Card className="w-full max-w-md p-6 shadow-md">
+        <Card className="w-full max-w-md p-6 shadow-md">
                 <CardHeader>
                     <CardTitle className="text-center text-xl">Login</CardTitle>
                 </CardHeader>
@@ -61,6 +60,5 @@ export default function Page() {
                     </div>
                 </CardContent>
             </Card>
-        </div>
     );
 }
